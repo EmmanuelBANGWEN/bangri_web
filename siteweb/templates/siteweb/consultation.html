@@ -1,0 +1,100 @@
+{% extends 'siteweb/base.html' %}
+{% load static %}
+
+{% block content %}
+<section id="consultation" class="consultation-section py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Consultation Personnalisée</h2>
+        
+        <!-- Intro Section -->
+        <div class="row">
+            <div class="col-md-8">
+                <p>Chez Bangri, nous accompagnons nos clients dans leurs projets à travers des consultations personnalisées. Nos services incluent des conseils stratégiques, le choix des technologies adaptées et l'analyse des performances, afin d'améliorer vos rendements et d'assurer la pérennité de vos activités.</p>
+            </div>
+            <div class="col-md-4">
+                <img src="{% static 'assets/img/consulting-team.jpg' %}" alt="Consultation Team" class="img-fluid">
+            </div>
+        </div>
+        
+        <!-- Services Section -->
+        <div class="row mt-5">
+            <div class="col-md-4">
+                <h3>Nos Services de Consultation</h3>
+                <ul class="list-unstyled">
+                    <li><i class="bi bi-check-circle-fill text-success"></i> Stratégies et gestion</li>
+                    <li><i class="bi bi-check-circle-fill text-success"></i> Choix technologiques pour l'automatisation</li>
+                    <li><i class="bi bi-check-circle-fill text-success"></i> Analyse de Performance et recommandations</li>
+                </ul>
+            </div>
+            
+            <!-- Client Case Studies -->
+            <div class="col-md-4">
+                <h3>Études de Cas</h3>
+                <blockquote>
+                    <p>"Grâce à la consultation Bangri, nous avons optimisé nos cultures et augmenté nos rendements de 25% en seulement un an."</p>
+                    <footer>- Exploitant agricole</footer>
+                </blockquote>
+            </div>
+            
+            <!-- Form Section -->
+            <div class="col-md-4">
+                <h3>Réservez une Consultation</h3>
+                <form method="post" action="{% url 'consultation_view' %}">
+                    {% csrf_token %}
+                    {% if messages %}
+                        <div class="alert alert-success">
+                            {% for message in messages %}
+                                {{ message }}
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Nom</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Adresse Email</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="consultation_type" class="form-label">Type de Consultation</label>
+                        <select class="form-control" id="consultation_type" name="consultation_type" required>
+                            <option value="Stratégies Agricoles">Stratégies</option>
+                            <option value="Choix Technologiques">Choix Technologiques</option>
+                            <option value="Analyse de Performance">Analyse de Performance</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-success">Réserver la Consultation</button>
+                </form>
+            </div>
+        </div>
+        
+        <!-- Visuals and Process -->
+        <div class="row mt-5">
+            <div class="col-md-6">
+                <h3>Notre Processus de Consultation</h3>
+                <img src="{% static 'assets/img/consultation-process.png' %}" alt="Processus de Consultation" class="img-fluid">
+                <ol class="process-steps mt-4">
+                    <li><strong>Étape 1 :</strong> Analyse de vos besoins spécifiques.</li>
+                    <li><strong>Étape 2 :</strong> Recommandations personnalisées basées sur nos expertises.</li>
+                    <li><strong>Étape 3 :</strong> Mise en œuvre et suivi des résultats.</li>
+                </ol>
+            </div>
+
+            <!-- Consultation Videos -->
+            <div class="col-md-6">
+                <h3>Vidéo Explicative sur nos Consultations</h3>
+                <video controls width="100%">
+                    <source src="{% static 'assets/videos/consultation-tutorial.mp4' %}" type="video/mp4">
+                    Votre navigateur ne supporte pas la vidéo.
+                </video>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

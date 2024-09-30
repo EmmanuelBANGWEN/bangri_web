@@ -1,0 +1,42 @@
+{% extends "siteweb/base.html" %}
+
+{% block content %}
+{% if messages %}
+          <div class="alert alert-danger">
+            {% for message in messages %}
+              {{ message }}
+            {% endfor %}
+          </div>
+        {% endif %}
+<div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="card shadow-lg p-4" style="width: 100%; max-width: 400px; border-radius: 10px;">
+        <h3 class="text-center mb-4">Sign In</h3>
+        <form id="contactForm" data-sb-form-api-token="API_TOKEN" method="POST" action=".">
+            {% csrf_token %}
+
+            <!-- Username input -->
+            <div class="form-outline mb-4 position-relative">
+                <label class="form-label" for="username">Username</label>
+                <input type="text" id="username" name="username" class="form-control form-control-lg" placeholder="Enter your username" required>
+                <i class="bi bi-person-circle position-absolute" style="top: 50%; right: 10px; transform: translateY(-50%);"></i>
+                <div class="invalid-feedback" data-sd-feedback="username:required">Username is required.</div>
+                <div class="invalid-feedback" data-sd-feedback="username:invalid">Username is not valid.</div>
+            </div>
+
+            <!-- Password input -->
+            <div class="form-outline mb-4 position-relative">
+                <label class="form-label" for="password">Password</label>
+                <input type="password" id="password" name="password" class="form-control form-control-lg" placeholder="Enter your password" required>
+                <i class="bi bi-lock-fill position-absolute" style="top: 50%; right: 10px; transform: translateY(-50%);"></i>
+                <div class="invalid-feedback" data-sd-feedback="password:required">Password is required.</div>
+            </div>
+
+            <!-- Submit button -->
+            <div class="d-grid">
+                <button type="submit" id="submitButton" class="btn btn-success btn-lg">Sign in</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock content %}

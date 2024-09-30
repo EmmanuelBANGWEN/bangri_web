@@ -1,0 +1,185 @@
+{% extends 'siteweb/base.html' %}
+{% load static %}
+
+{% block content %}
+<section id="support" class="support-section py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Accompagnement et Support</h2>
+        
+        <!-- Intro Section -->
+        <div class="row">
+            <div class="col-md-8">
+                <p>Nous offrons un accompagnement complet après-vente à nos clients, incluant formation, support technique et mises à jour logicielles. Notre équipe est dédiée à vous offrir une assistance personnalisée pour garantir le succès de votre projet.</p>
+            </div>
+            <div class="col-md-4">
+                <img src="{% static 'assets/img/support-team.jpg' %}" alt="Support Team" class="img-fluid">
+            </div>
+        </div>
+        
+        <!-- Services Section -->
+        <div class="row mt-5">
+            <div class="col-md-4">
+                <h3>Nos Services</h3>
+                <ul class="list-unstyled">
+                    <li><i class="bi bi-check-circle-fill text-success"></i> Formation sur nos logiciels</li>
+                    <li><i class="bi bi-check-circle-fill text-success"></i> Support technique 24/7</li>
+                    <li><i class="bi bi-check-circle-fill text-success"></i> Mises à jour régulières</li>
+                </ul>
+            </div>
+            
+            <!-- Testimonials Section -->
+            <div class="col-md-4">
+                <h3>Témoignages Clients</h3>
+                <blockquote>
+                    <p>"Le support technique de Bangri est exceptionnel ! Ils ont résolu notre problème rapidement et efficacement."</p>
+                    <footer>- Client Satisfait</footer>
+                </blockquote>
+            </div>
+            
+            <!-- Chatbot Section -->
+            <div class="col-md-4">
+                <h3>Support en Temps Réel</h3>
+                <p>Besoin d'une réponse rapide ? Utilisez notre chatbot pour obtenir de l'aide immédiate.</p>
+                <div id="chatbot-container">
+                    <div id="chatbot-messages"></div>
+                    <input type="text" id="chatbot-input" placeholder="Posez votre question...">
+                    {% if user.is_authenticated %}
+                    <button id="chatbot-send">Envoyer</button>
+                    {% else %}
+                    <button class="btn btn-success"> <a id="chatbot-nsend" href="{% url 'login_view' %}">Connectez-vous</a>
+                        </button>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        
+        <!-- Video Tutorials -->
+        <div class="row mt-5">
+            <div class="col-md-6">
+                <h3>Vidéos Explicatives</h3>
+                <video controls width="100%">
+                    <source src="{% static 'assets/videos/tutorial.mp4' %}" type="video/mp4">
+                    Votre navigateur ne supporte pas la vidéo.
+                </video>
+            </div>
+        </div>
+    </div>
+</section>
+{% if user.is_authenticated %}
+                    
+<style>
+    #chatbot-container {
+        border: 1px solid #28b23f;
+        border-radius: 10px;
+        padding: 10px;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+    }
+    #chatbot-messages {
+        flex-grow: 1;
+        overflow-y: auto;
+        margin-bottom: 10px;
+    }
+    #chatbot-input {
+        width: 70%;
+        padding: 5px;
+    }
+    #chatbot-send {
+        width: 68%;
+        padding: 5px;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+</style>
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const chatbotMessages = document.getElementById('chatbot-messages');
+        const chatbotInput = document.getElementById('chatbot-input');
+        const chatbotSend = document.getElementById('chatbot-send');
+
+        function addMessage(message, isUser = false) {
+            const messageElement = document.createElement('div');
+            messageElement.textContent = message;
+            messageElement.style.marginBottom = '5px';
+            messageElement.style.padding = '5px';
+            messageElement.style.borderRadius = '5px';
+            messageElement.style.maxWidth = '70%';
+            
+            if (isUser) {
+                messageElement.style.backgroundColor = '#e6f3ff';
+                messageElement.style.marginLeft = 'auto';
+            } else {
+                messageElement.style.backgroundColor = '#f0f0f0';
+            }
+
+            chatbotMessages.appendChild(messageElement);
+            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+        }
+
+        function handleUserInput() {
+            const userMessage = chatbotInput.value.trim();
+            if (userMessage) {
+                addMessage(userMessage, true);
+                chatbotInput.value = '';
+                
+                // Simuler une réponse du chatbot (à remplacer par une véritable logique de chatbot)
+                setTimeout(() => {
+                    addMessage("Merci pour votre message. Un membre de notre équipe vous contactera bientôt pour vous aider.");
+                }, 1000);
+            }
+        }
+
+        chatbotSend.addEventListener('click', handleUserInput);
+        chatbotInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                handleUserInput();
+            }
+        });
+
+        // Message de bienvenue
+        addMessage("Bonjour ! Comment puis-je vous aider aujourd'hui ?");
+    });
+</script>
+
+{% else %}
+
+                   
+<style>
+    #chatbot-container {
+        border: 1px solid #28b23f;
+        border-radius: 10px;
+        padding: 10px;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+    }
+    #chatbot-messages {
+        flex-grow: 1;
+        overflow-y: auto;
+        margin-bottom: 10px;
+    }
+    #chatbot-input {
+        width: 70%;
+        padding: 5px;
+    }
+    #chatbot-nsend {
+        width: 68%;
+        padding: 5px;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+</style>
+
+
+
+
+{% endif %}
+
+{% endblock %}

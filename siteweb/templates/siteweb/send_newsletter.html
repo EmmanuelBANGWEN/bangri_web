@@ -1,0 +1,12 @@
+<form method="post">
+    {% csrf_token %}
+    <div>
+        <label for="subject">Sujet :</label>
+        <input type="text" id="subject" name="subject" required>
+    </div>
+    <div>
+        <label for="message">Message :</label>
+        <textarea id="message" name="message" required></textarea>
+    </div>
+    <button type="submit">Envoyer</button>
+</form>

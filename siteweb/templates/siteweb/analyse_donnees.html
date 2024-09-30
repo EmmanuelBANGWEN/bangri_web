@@ -1,0 +1,85 @@
+{% extends 'siteweb/base.html' %}
+{% load static %}
+
+{% block content %}
+<section id="data-analysis" class="data-analysis-section py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Analyse de Données pour l'Agriculture</h2>
+
+        <!-- Intro Section -->
+        <div class="row">
+            <div class="col-md-8">
+                <p>Nous aidons les agriculteurs à exploiter pleinement les données issues de leurs activités. Grâce à des solutions de collecte, d’analyse, et d’interprétation de données, nous permettons de prendre des décisions basées sur des faits et des statistiques concrètes.</p>
+            </div>
+            <div class="col-md-4">
+                <img src="{% static 'assets/img/data-collection.png' %}" alt="Collecte de Données" class="img-fluid">
+            </div>
+        </div>
+
+        <!-- Tools and Technologies Section -->
+        <div class="row mt-5">
+            <div class="col-md-4">
+                <section>
+                    <h3>Outils et Technologies Utilisés</h3>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-check-circle-fill text-success"></i> Intelligence Artificielle (IA)</li>
+                        <li><i class="bi bi-check-circle-fill text-success"></i> Machine Learning</li>
+                        <li><i class="bi bi-check-circle-fill text-success"></i> Analyse Prédictive</li>
+                    </ul>
+                </section>
+                
+                <section>
+                    <h3>Prévision des Récoltes</h3>
+                    <img src="{% static 'assets/img/harvest-forecast-chart.png' %}" alt="Prévision des Récoltes" class="img-fluid">
+                </section> 
+            </div>
+
+            <!-- Case Studies Section -->
+            <div class="col-md-4">
+                <section>
+                    <h3>Études de Cas</h3>
+                    <blockquote>
+                        <p>"Grâce à leur analyse des données agricoles, nous avons optimisé nos récoltes et réduit nos coûts de manière significative."</p>
+                        <footer>- Client Satisfait</footer>
+                    </blockquote>
+                </section>
+                
+                <section>
+                    <h3>Visualisation des Données</h3>
+                    <img src="{% static 'assets/img/crop-growth-chart.png' %}" alt="Graphique de Croissance" class="img-fluid">
+                </section>
+            </div>
+
+            <!-- Case Studies 1 and 2 in Cards -->
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <img src="{% static 'assets/img/case-study-1.png' %}" class="card-img-top" alt="Optimisation des Récoltes">
+                    <div class="card-body">
+                        <h4 class="card-title">Étude de Cas 1: Optimisation des Récoltes</h4>
+                        <p class="card-text">Avec notre IA et nos outils d'analyse, nous avons aidé une exploitation à augmenter ses rendements de 20%.</p>
+                    </div>
+                </div>
+
+                <div class="card mb-4 shadow-sm">
+                    <img src="{% static 'assets/img/case-study-2.png' %}" class="card-img-top" alt="Réduction des Coûts">
+                    <div class="card-body">
+                        <h4 class="card-title">Étude de Cas 2: Réduction des Coûts</h4>
+                        <p class="card-text">Grâce à des techniques de machine learning, une autre exploitation a réduit ses coûts de 15%.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Video Demo Section -->
+        <div class="row mt-5">
+            <div class="col-md-6">
+                <h3>Démonstration de nos Outils d'Analyse</h3>
+                <video controls width="100%">
+                    <source src="{% static 'assets/video/farm-data-demo.mp4' %}" type="video/mp4">
+                    Votre navigateur ne supporte pas la vidéo.
+                </video>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

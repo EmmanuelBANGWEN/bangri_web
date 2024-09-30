@@ -1,0 +1,162 @@
+{% extends 'siteweb/base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+         Profile Info Section
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <div class="card-body text-center">
+                    <div class="profile-pic-wrapper">
+                        <img src="{{ user.profile.photo.url }}" class="rounded-circle profile-pic" alt="Profile picture" width="150">
+                    </div>
+                    <h4 class="card-title mt-3">{{ user.username }}</h4>
+                    <p class="card-text text-muted">{{ user.profile.bio }}</p>
+                    <!-- Edit Button -->
+                    <button id="edit-profile-btn" class="btn btn-success mt-3">Modifier le profil</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Profile Edit Form Section (hidden initially) -->
+        <div class="col-md-8">
+            <div class="card shadow-sm" id="edit-profile-card" style="display: none;">
+                <div class="card-body">
+                    <h4 class="card-title">Modifier les informations</h4>
+                    <form method="POST" enctype="multipart/form-data" class="modern-form">
+                        {% csrf_token %}
+                        <div class="form-group position-relative">
+                            <label for="username" class="form-label">Nom d'utilisateur</label>
+                            {{ user_form.username|add_class:"form-control modern-input" }}
+                        </div>
+                        <div class="form-group position-relative">
+                            <label for="email" class="form-label">Email</label>
+                            {{ user_form.email|add_class:"form-control modern-input" }}
+                        </div>
+                        <div class="form-group position-relative">
+                            <label for="bio" class="form-label">Biographie</label>
+                            {{ profile_form.bio|add_class:"form-control modern-input" }}
+                        </div>
+                        <div class="form-group position-relative">
+                            <label for="photo" class="form-label">Photo de profil</label>
+                            {{ profile_form.photo|add_class:"form-control modern-input" }}
+                        </div>
+                        <button type="submit" class="btn btn-success btn-modern">Mettre à jour</button>
+                        <button type="button" id="cancel-edit-btn" class="btn btn-danger btn-modern">Annuler</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+/* Modern input styling */
+.modern-input {
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+    padding: 12px 20px;
+    font-size: 16px;
+    transition: box-shadow 0.3s ease;
+}
+
+.modern-input:focus {
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+    border-color: #007bff;
+}
+
+/* Floating label effect */
+.form-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    position: absolute;
+    top: -10px;
+    left: 12px;
+    background-color: #fff;
+    padding: 0 5px;
+    font-size: 14px;
+    color: #6c757d;
+    transition: all 0.2s ease;
+}
+
+/* Buttons styling */
+.btn-modern {
+    border-radius: 50px;
+    padding: 10px 20px;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-modern:hover {
+    transform: scale(1.05);
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border: none;
+}
+
+.btn-primary:hover, .btn-danger:hover {
+    background-color: darken(#007bff, 10%);
+}
+
+/* Add some spacing and modern box shadow to the card */
+.card {
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling the profile image */
+.profile-pic-wrapper {
+    position: relative;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 4px solid #f8f9fa;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.profile-pic:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .col-md-8 {
+        margin-top: 20px;
+    }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    let editProfileBtn = document.getElementById('edit-profile-btn');
+    let editProfileCard = document.getElementById('edit-profile-card');
+    let cancelEditBtn = document.getElementById('cancel-edit-btn');
+
+    // Toggle the profile edit form
+    editProfileBtn.addEventListener('click', function() {
+        editProfileCard.style.display = 'block';
+        editProfileBtn.style.display = 'none';
+    });
+
+    // Cancel button hides the form and shows the edit button again
+    cancelEditBtn.addEventListener('click', function() {
+        editProfileCard.style.display = 'none';
+        editProfileBtn.style.display = 'block';
+    });
+});
+</script>
+{% endblock %} -->

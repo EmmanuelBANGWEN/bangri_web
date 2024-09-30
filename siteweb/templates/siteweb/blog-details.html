@@ -1,0 +1,371 @@
+<!-- 11 -->
+
+{% extends 'siteweb/base.html' %}
+{% load static %}
+
+{% block content %}
+
+  <main class="main">
+    <!-- Page Title -->
+    <div class="page-title dark-background" data-aos="fade" style="background-image: url(assets/img/page-title-bg.webp);">
+      <div class="container position-relative">
+        <h1>Blog Details</h1>
+        <p>Esse dolorum voluptatum ullam est sint nemo et est ipsa porro placeat quibusdam quia assumenda numquam molestias.</p>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="{% url 'home_view' %}">Home</a></li>
+            <li class="current">Blog Details</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+    <!-- {% if category %}
+    <p>Articles dédiés au language {{category}} </p>
+{% endif %} -->
+<div class="container">
+  <div class="row">
+    
+    <!-- Section principale : article et commentaires -->
+    <div class="col-lg-8">
+      <!-- Article du blog -->
+      <section id="blog-details" class="blog-details section">
+        <article class="article">
+            <div class="post-img">
+                <img src="{% static 'assets/img/blog/blog-1.jpg' %}" alt="" class="img-fluid">
+            </div>
+            <div class="meta-bottom">
+                <i class="bi bi-folder"></i>
+                <ul class="cats">
+                  <li><a href="{% url 'category_view' post.category.slug %}">{{ post.category.name }}</a></li>
+
+                </ul>
+    
+                <i class="bi bi-tags"></i>
+                <ul class="tags">
+                    {% for tag in post.tags.all %}
+                        <li><a href="{% url 'tag_view' tag.slug %}">#{{ tag.name }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div><!-- End meta bottom -->
+
+
+          <h2 class="title">{{post.title}}</h2>
+        
+          <div class="content">
+            {{post.body|safe}}
+          </div>
+        </article>
+      </section>
+
+      <!-- Section des commentaires -->
+<!-- Section des commentaires -->
+<section id="blog-comments" class="blog-comments section">
+  <h4 class="comments-count">{{ comments.count }} commentaire(s)</h4>
+
+  <!-- Fonction récursive pour afficher les commentaires et les réponses -->
+  {% for comment in comments %}
+      {% include 'siteweb/comment.html' with comment=comment level=0 %}
+  {% endfor %}
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.reply').forEach(function(button) {
+        button.addEventListener('click', function(event) {
+            event.preventDefault();
+            var commentId = this.getAttribute('data-comment-id');
+            document.getElementById('parent_id').value = commentId;
+            document.querySelector('textarea[name="body"]').focus();  // Mettre le focus sur le champ de texte
+        });
+    });
+});
+
+  </script>
+  
+
+      <!-- Formulaire d'ajout de commentaire -->
+      <section id="comment-form" class="comment-form section">
+        
+
+        <form action="" method="post">
+          <h4>Ajouter un commentaire</h4>
+          <textarea name="body" required placeholder="Votre commentaire*"></textarea>
+          <input type="hidden" name="parent_id" id="parent_id" value="">
+          <button type="submit" class="btn btn-success">Envoyer</button>
+          {% csrf_token %}
+        </form>
+      </section>
+    </div>
+    
+    <!-- Sidebar à droite -->
+    <div class="col-lg-4 sidebar">
+      <!-- Widget de l'auteur -->
+       
+      <div class="blog-author-widget widget-item">
+        <div class="d-flex flex-column align-items-center">
+            <div class="d-flex align-items-center w-100">
+                <div class="author-image">
+                    
+                        <img src="{% static 'assets/img/monicon.png' %}" alt="Default photo" class="rounded-circle"> <!-- Image par défaut si l'utilisateur n'a pas de photo -->
+                </div>
+                <div class="author-info ml-3">
+                    <h4>{{ post.author }}</h4>
+                    <div class="social-links">
+                        <a href="https://x.com/#"><i class="bi bi-twitter-x"></i></a>
+                        <a href="https://facebook.com/#"><i class="bi bi-facebook"></i></a>
+                        <a href="https://instagram.com/#"><i class="bi bi-instagram"></i></a>
+                        <a href="https://linkedin.com/#"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Biographie de l'auteur -->
+            <!-- <p class="author-bio mt-3">
+                {% if post.author.profile.bio %}
+                    {{ post.author.profile.bio }}
+                {% else %}
+                    <p>RAS</p>
+                {% endif %}
+            </p> -->
+        </div>
+    </div>
+
+    <style>
+
+.author-image img {
+    width: 100px; /* Ajuste la taille selon tes besoins */
+    height: 100px;
+    border-radius: 50%; /* Pour rendre l'image ronde */
+    object-fit: cover; /* Pour s'assurer que l'image est bien cadrée dans le cercle */
+
+}
+.comment-img img {
+  width: 20px; /* Ajuste la taille selon tes besoins */
+    height: 50px;
+    border-radius: 50%; /* Pour rendre l'image ronde */
+    object-fit: cover;
+
+}
+
+    </style>
+    
+         <!-- Search Widget -->
+         <div class="search-widget widget-item">
+          <h3 class="widget-title">Search</h3>
+          
+          <form action="{% url 'post_search' %}" method="get">
+
+          <p>
+            <input type="text" name="query" maxlength="200" required id="id_query">
+
+          </p>
+            <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+          </form>
+
+        </div><!--/Search Widget -->
+
+      <!-- Widget des catégories -->
+      <div class="categories-widget widget-item">
+        <h4>Categories</h4>
+        <ul>
+          {% for cat in categories %}
+            <li><a href="{% url 'category_view' cat.slug %}">{{cat.name}}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <!-- Widget des articles récents -->
+      <div class="widget-item">
+        <h3 class="widget-title">Articles récents</h3>
+        <div class="recent-posts">
+
+          {% for post in recent_posts %}
+          <div class="post-item mb-4 d-flex align-items-center">
+            <!-- Post Thumbnail -->
+            <div class="post-thumbnail">
+              <a href="{{ post.get_absolute_url }}">
+                <img src="{% static 'assets/img/blog/blog-6.jpg' %}" alt="{{ post.title }}" class="img-fluid rounded" style="width: 110px; height: 110px; object-fit: cover;">
+              </a>
+            </div>
+
+            <!-- Post Details -->
+            <div class="post-details ms-3">
+              <!-- Post Title -->
+              <h4 class="post-title mb-1">
+                <a href="{{ post.get_absolute_url }}" class="text-dark">{{ post.title|truncatechars:20 }}</a>
+              </h4>
+
+              <!-- Meta Information -->
+              <div class="meta d-flex align-items-center text-muted small">
+                <div class="post-date me-3">
+                  <i class="bi bi-calendar"></i> 
+                  <span>{{ post.created|date:"d M Y" }}</span>
+                </div>
+
+                <!-- <div class="post-author me-3">
+                  <i class="bi bi-person"></i> 
+                  <span>{{ post.author }}</span>
+                </div> -->
+
+                <div class="post-category">
+                  <i class="bi bi-folder2"></i> 
+                  <span>{{ post.category.name }}</span>
+                </div>
+              </div>
+
+              <!-- Post Excerpt -->
+              <p class="post-excerpt text-muted mt-2">{{ post.body|truncatechars:0|safe }}</p>
+            </div>
+          </div>
+        {% endfor %}
+
+        </div>
+      </div>
+
+              
+              <!-- Tags Widget -->
+              <div class="tags-widget widget-item">
+                
+                <h3 class="widget-title">Tags</h3>
+                <ul>
+                {% for tag in tags %}
+                <a href="{% url 'tag_view' tag.slug %}">
+                  {{tag.name}}
+                    </a>
+                {% endfor %}
+                </ul>
+
+              </div><!--/Tags Widget -->
+            
+          <!-- Similar Posts Widget -->
+        <div class="widget-item">
+          <h3 class="widget-title">Similar Posts</h3>
+
+          <div class="similar-posts">
+            {% for post in similar_post %}
+              <div class="post-item mb-4 d-flex align-items-center">
+                <!-- Post Thumbnail -->
+                <div class="post-thumbnail">
+                  <a href="{{ post.get_absolute_url }}">
+                    <img src="{% static 'assets/img/blog/blog-6.jpg' %}" alt="{{ post.title }}" class="img-fluid rounded" style="width: 110px; height: 110px; object-fit: cover;">
+                  </a>
+                </div>
+
+                <!-- Post Details -->
+                <div class="post-details ms-3">
+                  <!-- Post Title -->
+                  <h5 class="post-title mb-1">
+                    <a href="{{ post.get_absolute_url }}" class="text-dark">{{ post.title|truncatechars:20 }}</a>
+                  </h5>
+
+                  <!-- Meta Information -->
+                  <div class="meta d-flex align-items-center text-muted small">
+                    <div class="post-date me-3">
+                      <i class="bi bi-calendar"></i> 
+                      <span>{{ post.created|date:"d M Y" }}</span>
+                    </div>
+
+                    <!-- <div class="post-author me-3">
+                      <i class="bi bi-person"></i> 
+                      <span>{{ post.author }}</span>
+                    </div> -->
+
+                    <div class="post-category">
+                      <i class="bi bi-folder2"></i> 
+                      <span>{{ post.category.name }}</span>
+                    </div>
+                  </div>
+
+                  <!-- Post Excerpt -->
+                  <p class="post-excerpt text-muted mt-2">{{ post.body|truncatechars:30|safe }}</p>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+  </main>
+
+<style>
+
+/* Commentaires parents */
+.comment {
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #fafefa;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.comment:hover {
+    transform: translateY(-5px);
+}
+
+/* Réponses aux commentaires */
+.replies .comment-reply {
+    padding: 15px;
+    margin: 10px 0 20px 40px;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.comment-reply:hover {
+    transform: translateY(-3px);
+}
+
+/* Polices et couleurs modernes */
+.comment h5, .comment-reply h5 {
+    font-weight: bold;
+    color: #2c0d56;
+}
+
+.comment p, .comment-reply p {
+    font-size: 16px;
+    color: #555;
+}
+
+.comment time, .comment-reply time {
+    font-size: 14px;
+    color: #d18dc7;
+}
+
+/* Icône de réponse */
+a.reply {
+    color: #0f8723;
+    font-size: 14px;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a.reply:hover {
+    color: #3e874e;
+}
+
+/* Animation de clic pour focus sur la zone de texte */
+#comment-form textarea:focus {
+    border-color: #28a745;
+    box-shadow: 0 0 10px #8dd199;
+}
+
+.comment {
+    margin-bottom: 20px;
+}
+.comment .replies {
+    margin-left: 20px; /* Décalage pour les réponses */
+}
+.comment-img img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+</style>
+  
+{% endblock %}

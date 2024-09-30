@@ -1,0 +1,72 @@
+{% extends "siteweb/base.html" %}
+
+{% block content %}
+<div class="contained px-5 py-5 "> 
+    <div class="container d-flex justify-content-center align-items-center vh-10">
+
+    <div class="card p-4 shadow-lg" style="width: 100%; max-width: 500px; border-radius: 20px;">
+        <h3 class="text-center mb-4">Create Your Account</h3>
+        <form id="contactForm" method="POST" action=".">
+            {% csrf_token %}
+            <!-- Pills navs -->
+            <!-- <ul class="nav nav-pills nav-justified mb-3">
+                <li class="nav-item">
+                    <a class="nav-link active" id="tab-register" data-mdb-pill-init href="#pills-register" role="tab"
+                        aria-controls="pills-register" aria-selected="true">Register</a>
+                </li>
+            </ul> -->
+            
+            <!-- Username input -->
+            <div class="form-outline mb-4">
+                {{ user_form.username }}
+                <label class="form-label" for="{{ user_form.username.id_for_label }}"></label>
+            </div>
+
+            <!-- First Name input -->
+            <div class="form-outline mb-3">
+                {{ user_form.first_name }}
+                <label class="form-label" for="{{ user_form.first_name.id_for_label }}"></label>
+            </div>
+
+            <!-- Last Name input -->
+            <div class="form-outline mb-3">
+                {{ user_form.last_name }}
+                <label class="form-label" for="{{ user_form.last_name.id_for_label }}"></label>
+            </div>
+
+            <!-- Email input -->
+            <div class="form-outline mb-3">
+                {{ user_form.email }}
+                <label class="form-label" for="{{ user_form.email.id_for_label }}"></label>
+            </div>
+
+            <!-- Password input -->
+            <div class="form-outline mb-3">
+                {{ user_form.password }}
+                <label class="form-label" for="{{ user_form.password.id_for_label }}"></label>
+            </div>
+
+            <!-- Repeat Password input -->
+            <div class="form-outline mb-3">
+                {{ user_form.repeatpassword }}
+                <label class="form-label" for="{{ user_form.repeatpassword.id_for_label }}"></label>
+            </div>
+
+            <!-- Checkbox -->
+            <div class="form-check d-flex justify-content-center mb-4">
+                <input class="form-check-input me-2" type="checkbox" value="" id="registerCheck" checked />
+                <label class="form-check-label" for="registerCheck">
+                    I agree to the terms and conditions
+                </label>
+            </div>
+
+            <!-- Submit button -->
+            <div class="d-grid">
+                <button type="submit" class="btn btn-success btn-lg btn-block">Sign Up</button>
+            </div>
+        </form>
+    </div>
+    </div>
+</div>
+
+{% endblock content %}

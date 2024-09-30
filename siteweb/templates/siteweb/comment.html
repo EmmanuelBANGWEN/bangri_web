@@ -1,0 +1,46 @@
+{% load static %}
+
+
+<div class="comment">
+    <div class="d-flex">
+        <div class="comment-img">
+          
+                <img src="{% static 'assets/img/default-avatar.svg'%}" alt="Default photo"> <!-- Image par défaut -->
+        </div>
+        <div>
+            <h5>{{ comment.author.username }}</h5>
+            <h6><time>{{ comment.created }}</time></h6>
+            <p>{{ comment.body }}</p>
+
+            <!-- Bouton Répondre -->
+            <a href="#" class="reply" data-comment-id="{{ comment.id }}"><i class="bi bi-reply-fill"></i> Répondre</a>
+        </div>
+    </div>
+
+    <!-- Afficher les réponses de manière récursive -->
+    {% if comment.replies.all %}
+        <div class="replies">
+            {% for reply in comment.replies.all %}
+                {% include 'siteweb/comment.html' with comment=reply level=level|add:2 %}
+            {% endfor %}
+        </div>
+    {% endif %}
+</div>
+
+<style>
+
+
+.comment {
+    margin-bottom: 20px;
+}
+.comment .replies {
+    margin-left: 20px; /* Décalage pour les réponses */
+}
+.comment-img img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+
+</style>

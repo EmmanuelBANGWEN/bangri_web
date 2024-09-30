@@ -1,0 +1,95 @@
+{% extends 'siteweb/base.html' %}
+{% load static %}
+
+{% block content %}
+<main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title dark-background" data-aos="fade" style="background-image: url(assets/img/page-title-bg.webp);">
+      <div class="container position-relative">
+        {% if query %}
+          <h1>Posts containing "{{ query }}"</h1>
+          <p>Home / Search Results for "{{ query }}"</p>
+        {% else %}
+          <h1>Search for posts</h1>
+        {% endif %}
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="{% url 'home_view' %}">Home</a></li>
+            <li class="current">Search</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Blog Posts Section -->
+    <section id="blog-posts-2" class="blog-posts-2 section">
+      <div class="container">
+        <div class="row gy-4">
+          <!-- Results Column -->
+          <div class="col-lg-8">
+            {% if results %}
+              <h3>
+                {% with results.count as total_results %}
+                  Found {{ total_results }} result{{ total_results|pluralize }}
+                {% endwith %}
+              </h3>
+              <div class="row gy-4">
+                {% for post in results %}
+                <div class="col-lg-6">
+                  <article class="position-relative h-100">
+                    <div class="post-img position-relative overflow-hidden">
+                      <!-- You might need to replace this with the actual post image field -->
+                      <img src="{% static 'assets/img/blog/blog-1.jpg' %}" class="img-fluid" alt="{{ post.title }}">
+                    </div>
+                    <div class="meta d-flex align-items-end">
+                      <span class="post-date">
+                        <span>{{ post.published|date:"d" }}</span>{{ post.published|date:"F" }}
+                      </span>
+                      <div class="d-flex align-items-center">
+                        <i class="bi bi-person"></i>
+                        <span class="ps-2">{{ post.author }}</span>
+                      </div>
+                      <span class="px-3 text-black-50">/</span>
+                      <div class="d-flex align-items-center">
+                        <i class="bi bi-folder2"></i> 
+                        <span class="ps-2">{{post.category}}</span>
+                      </div>
+                    </div>
+                    <div class="post-content d-flex flex-column">
+                      <h3 class="post-title">{{ post.title }}</h3>
+                      <p>{{ post.body|truncatechars:50|safe }}</p>
+                      <a href="{{ post.get_absolute_url }}" class="readmore stretched-link">
+                        <span>Read More</span><i class="bi bi-arrow-right"></i>
+                      </a>
+                    </div>
+                  </article>
+                </div><!-- End post list item -->
+                {% endfor %}
+              </div><!-- End Results Grid -->
+            {% else %}
+              <p>No results found for your query "{{ query }}"</p>
+            {% endif %}
+          </div><!-- End Results Column -->
+
+          <!-- Search Widget Column -->
+          <div class="col-lg-4">
+            <!-- Search Widget -->
+            <div class="card mb-4 search-widget widget-item">
+              <div class="card-header">Search</div>
+              <div class="card-body">
+                <form action="{% url 'post_search' %}" method="get">
+                    <input class="form-control" type="text" name="query" maxlength="200" required id="id_query" placeholder="Enter search term..." >
+                    <button class="btn btn-primary" type="submit" title="Search">
+                      <i class="bi bi-search"></i>
+                    </button>
+                </form>
+              </div>
+            </div><!-- End Search Widget -->
+          </div><!-- End Search Widget Column -->
+        </div><!-- End Row -->
+      </div><!-- End Container -->
+    </section><!-- /Blog Posts Section -->
+
+</main>
+{% endblock %}

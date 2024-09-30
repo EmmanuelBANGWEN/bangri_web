@@ -1,0 +1,235 @@
+[
+{
+  "model": "siteweb.category",
+  "pk": 1,
+  "fields": {
+    "name": "python",
+    "slug": "python"
+  }
+},
+{
+  "model": "siteweb.category",
+  "pk": 2,
+  "fields": {
+    "name": "django",
+    "slug": "django"
+  }
+},
+{
+  "model": "siteweb.category",
+  "pk": 3,
+  "fields": {
+    "name": "agtech",
+    "slug": "agtech"
+  }
+},
+{
+  "model": "siteweb.category",
+  "pk": 4,
+  "fields": {
+    "name": "data",
+    "slug": "data"
+  }
+},
+{
+  "model": "siteweb.post",
+  "pk": 1,
+  "fields": {
+    "category": 1,
+    "title": "hello python farmer",
+    "slug": "hello-python-farmer",
+    "body": "<p>hello python farmerhello python farmerhello python farmerhello python farmerhello python farmerhello python farmerhello python farmerhello python farmerhello python farmerhello python farmerhello python farmerhello python farmerhello python farmerhello python farmerhello python farmerhello python farmerhello python farmerhello python farmerhello python farmerhello python farmerhello python farmerhello python farmerhello python farmerhello python farmerhello python farmerhello python farmerhello python farmerhello python farmerhello python farmerhello python farmerhello python farmerhello python farmerhello python farmerhello python farmerhello python farmerhello python farmerhello python farmerhello python farmerhello python farmerhello python farmerhello python farmerhello python farmerhello python farmerhello python farmerhello python farmerhello python farmerhello python farmerhello python farmerhello python farmerhello python farmerhello python farmerhello python farmerhello python farmerhello python farmerhello python farmerhello python farmerhello python farmerhello python farmerhello python farmerhello python farmerhello python farmerhello python farmerhello python farmer</p>",
+    "created": "2024-09-17T21:46:12.870Z",
+    "update": "2024-09-19T10:07:33.881Z",
+    "statut": "published",
+    "published": "2024-09-17T21:45:28Z",
+    "author": 1
+  }
+},
+{
+  "model": "siteweb.post",
+  "pk": 2,
+  "fields": {
+    "category": 1,
+    "title": "python analyse",
+    "slug": "python-analyse",
+    "body": "<p>python analysepython analysepython analysepython analysepython analysepython analysepython analysepython analysepython analysepython analysepython analysepython analysepython analysepython analysepython analysepython analysepython analysepython analysepython analysepython analysepython analysepython analysepython analysepython analysepython analysepython analysepython analysepython analysepython analysepython analysepython analysepython analysepython analysepython analysepython analysepython analysepython analysepython analysepython analysepython analysepython analysepython analysepython analysepython analysepython analysepython analysepython analysepython analysepython analysepython analysepython analysepython analysepython analysepython analysepython analysepython analysepython analysepython analysepython analysepython analysepython analysepython analysepython analysepython analysepython analysepython analysepython analysepython analysepython analysepython analysepython analysepython analysepython analysepython analysepython analysepython analyse</p>",
+    "created": "2024-09-17T21:47:00.689Z",
+    "update": "2024-09-17T21:47:00.689Z",
+    "statut": "published",
+    "published": "2024-09-17T21:46:18Z",
+    "author": 1
+  }
+},
+{
+  "model": "siteweb.post",
+  "pk": 3,
+  "fields": {
+    "category": 3,
+    "title": "utilisation des nouvelle tech en elevage",
+    "slug": "utilisation-des-nouvelle-tech-en-elevage",
+    "body": "<p>utilisation des nouvelle tech en elevageutilisation des nouvelle tech en elevageutilisation des nouvelle tech en elevageutilisation des nouvelle tech en elevageutilisation des nouvelle tech en elevageutilisation des nouvelle tech en elevageutilisation des nouvelle tech en elevageutilisation des nouvelle tech en elevageutilisation des nouvelle tech en elevageutilisation des nouvelle tech en elevageutilisation des nouvelle tech en elevageutilisation des nouvelle tech en elevageutilisation des nouvelle tech en elevageutilisation des nouvelle tech en elevageutilisation des nouvelle tech en elevageutilisation des nouvelle tech en elevageutilisation des nouvelle tech en elevageutilisation des nouvelle tech en elevageutilisation des nouvelle tech en elevageutilisation des nouvelle tech en elevageutilisation des nouvelle tech en elevageutilisation des nouvelle tech en elevageutilisation des nouvelle tech en elevageutilisation des nouvelle tech en elevageutilisation des nouvelle tech en elevageutilisation des nouvelle tech en elevageutilisation des nouvelle tech en elevageutilisation des nouvelle tech en elevageutilisation des nouvelle tech en elevageutilisation des nouvelle tech en elevageutilisation des nouvelle tech en elevageutilisation des nouvelle tech en elevageutilisation des nouvelle tech en elevageutilisation des nouvelle tech en elevageutilisation des nouvelle tech en elevageutilisation des nouvelle tech en elevageutilisation des nouvelle tech en elevageutilisation des nouvelle tech en elevageutilisation des nouvelle tech en elevageutilisation des nouvelle tech en elevageutilisation des nouvelle tech en elevageutilisation des nouvelle tech en elevage</p>",
+    "created": "2024-09-17T21:47:43.676Z",
+    "update": "2024-09-17T21:47:43.676Z",
+    "statut": "published",
+    "published": "2024-09-17T21:47:03Z",
+    "author": 1
+  }
+},
+{
+  "model": "siteweb.post",
+  "pk": 4,
+  "fields": {
+    "category": 1,
+    "title": "les bibliotech numpy et pande de python",
+    "slug": "les-bibliotech-numpy-et-pande-de-python",
+    "body": "<p>les bibliotech numpy et pande de pythonles bibliotech numpy et pande de pythonles bibliotech numpy et pande de pythonles bibliotech numpy et pande de pythonles bibliotech numpy et pande de pythonles bibliotech numpy et pande de pythonles bibliotech numpy et pande de pythonles bibliotech numpy et pande de pythonles bibliotech numpy et pande de pythonles bibliotech numpy et pande de pythonles bibliotech numpy et pande de pythonles bibliotech numpy et pande de pythonles bibliotech numpy et pande de pythonles bibliotech numpy et pande de pythonles bibliotech numpy et pande de pythonles bibliotech numpy et pande de pythonles bibliotech numpy et pande de pythonles bibliotech numpy et pande de pythonles bibliotech numpy et pande de pythonles bibliotech numpy et pande de pythonles bibliotech numpy et pande de pythonles bibliotech numpy et pande de pythonles bibliotech numpy et pande de pythonles bibliotech numpy et pande de pythonles bibliotech numpy et pande de pythonles bibliotech numpy et pande de pythonles bibliotech numpy et pande de pythonles bibliotech numpy et pande de pythonles bibliotech numpy et pande de pythonles bibliotech numpy et pande de pythonles bibliotech numpy et pande de pythonles bibliotech numpy et pande de pythonles bibliotech numpy et pande de pythonles bibliotech numpy et pande de pythonles bibliotech numpy et pande de pythonles bibliotech numpy et pande de pythonles bibliotech numpy et pande de pythonles bibliotech numpy et pande de python</p>",
+    "created": "2024-09-17T21:48:31.280Z",
+    "update": "2024-09-17T21:48:31.280Z",
+    "statut": "published",
+    "published": "2024-09-17T21:47:46Z",
+    "author": 1
+  }
+},
+{
+  "model": "siteweb.post",
+  "pk": 5,
+  "fields": {
+    "category": 4,
+    "title": "quelles sont les donnes que nus pouvons recolteer en elevage",
+    "slug": "quelles-sont-les-donnes-que-nus-pouvons-recolteer-en-elevage",
+    "body": "<p>quelles sont les donnes que nus pouvons recolteer en elevagequelles sont les donnes que nus pouvons recolteer en elevagequelles sont les donnes que nus pouvons recolteer en elevagequelles sont les donnes que nus pouvons recolteer en elevagequelles sont les donnes que nus pouvons recolteer en elevagequelles sont les donnes que nus pouvons recolteer en elevagequelles sont les donnes que nus pouvons recolteer en elevagequelles sont les donnes que nus pouvons recolteer en elevagequelles sont les donnes que nus pouvons recolteer en elevagequelles sont les donnes que nus pouvons recolteer en elevagequelles sont les donnes que nus pouvons recolteer en elevagequelles sont les donnes que nus pouvons recolteer en elevagequelles sont les donnes que nus pouvons recolteer en elevagequelles sont les donnes que nus pouvons recolteer en elevagequelles sont les donnes que nus pouvons recolteer en elevagequelles sont les donnes que nus pouvons recolteer en elevagequelles sont les donnes que nus pouvons recolteer en elevagequelles sont les donnes que nus pouvons recolteer en elevagequelles sont les donnes que nus pouvons recolteer en elevagequelles sont les donnes que nus pouvons recolteer en elevagequelles sont les donnes que nus pouvons recolteer en elevagequelles sont les donnes que nus pouvons recolteer en elevagequelles sont les donnes que nus pouvons recolteer en elevagequelles sont les donnes que nus pouvons recolteer en elevagequelles sont les donnes que nus pouvons recolteer en elevagequelles sont les donnes que nus pouvons recolteer en elevagequelles sont les donnes que nus pouvons recolteer en elevagequelles sont les donnes que nus pouvons recolteer en elevagequelles sont les donnes que nus pouvons recolteer en elevagequelles sont les donnes que nus pouvons recolteer en elevage</p>",
+    "created": "2024-09-17T21:49:52.342Z",
+    "update": "2024-09-17T21:49:52.342Z",
+    "statut": "published",
+    "published": "2024-09-17T21:49:00Z",
+    "author": 1
+  }
+},
+{
+  "model": "siteweb.post",
+  "pk": 6,
+  "fields": {
+    "category": 4,
+    "title": "comment predire une pathologie",
+    "slug": "comment-predire-une-pathologie",
+    "body": "<p>comment predire une pathologiecomment predire une pathologiecomment predire une pathologiecomment predire une pathologiecomment predire une pathologiecomment predire une pathologiecomment predire une pathologiecomment predire une pathologiecomment predire une pathologiecomment predire une pathologiecomment predire une pathologiecomment predire une pathologiecomment predire une pathologiecomment predire une pathologiecomment predire une pathologiecomment predire une pathologiecomment predire une pathologiecomment predire une pathologiecomment predire une pathologiecomment predire une pathologiecomment predire une pathologiecomment predire une pathologiecomment predire une pathologiecomment predire une pathologiecomment predire une pathologiecomment predire une pathologiecomment predire une pathologiecomment predire une pathologiecomment predire une pathologiecomment predire une pathologiecomment predire une pathologiecomment predire une pathologiecomment predire une pathologiecomment predire une pathologiecomment predire une pathologiecomment predire une pathologiecomment predire une pathologiecomment predire une pathologiecomment predire une pathologiecomment predire une pathologiecomment predire une pathologiecomment predire une pathologiecomment predire une pathologie</p>",
+    "created": "2024-09-17T21:50:25.847Z",
+    "update": "2024-09-17T21:50:25.847Z",
+    "statut": "published",
+    "published": "2024-09-17T21:49:55Z",
+    "author": 1
+  }
+},
+{
+  "model": "siteweb.post",
+  "pk": 7,
+  "fields": {
+    "category": 1,
+    "title": "la biblioteque matplotlib pour lavisualisation des donnes",
+    "slug": "la-biblioteque-matplotlib-pour-lavisualisation-des-donnes",
+    "body": "<p>la biblioteque matplotlib pour lavisualisation des donnes&nbsp;la biblioteque matplotlib pour lavisualisation des donnes&nbsp;la biblioteque matplotlib pour lavisualisation des donnes&nbsp;la biblioteque matplotlib pour lavisualisation des donnes&nbsp;la biblioteque matplotlib pour lavisualisation des donnes&nbsp;la biblioteque matplotlib pour lavisualisation des donnes&nbsp;la biblioteque matplotlib pour lavisualisation des donnes&nbsp;la biblioteque matplotlib pour lavisualisation des donnes&nbsp;la biblioteque matplotlib pour lavisualisation des donnes&nbsp;la biblioteque matplotlib pour lavisualisation des donnes&nbsp;la biblioteque matplotlib pour lavisualisation des donnes&nbsp;la biblioteque matplotlib pour lavisualisation des donnes&nbsp;la biblioteque matplotlib pour lavisualisation des donnes&nbsp;la biblioteque matplotlib pour lavisualisation des donnes&nbsp;la biblioteque matplotlib pour lavisualisation des donnes&nbsp;la biblioteque matplotlib pour lavisualisation des donnes&nbsp;la biblioteque matplotlib pour lavisualisation des donnes&nbsp;la biblioteque matplotlib pour lavisualisation des donnes&nbsp;la biblioteque matplotlib pour lavisualisation des donnes&nbsp;la biblioteque matplotlib pour lavisualisation des donnes&nbsp;la biblioteque matplotlib pour lavisualisation des donnes&nbsp;la biblioteque matplotlib pour lavisualisation des donnes&nbsp;la biblioteque matplotlib pour lavisualisation des donnes&nbsp;la biblioteque matplotlib pour lavisualisation des donnes&nbsp;la biblioteque matplotlib pour lavisualisation des donnes&nbsp;la biblioteque matplotlib pour lavisualisation des donnes&nbsp;</p>",
+    "created": "2024-09-17T21:51:19.053Z",
+    "update": "2024-09-17T21:51:19.053Z",
+    "statut": "published",
+    "published": "2024-09-17T21:50:28Z",
+    "author": 1
+  }
+},
+{
+  "model": "siteweb.post",
+  "pk": 8,
+  "fields": {
+    "category": 2,
+    "title": "website agtech",
+    "slug": "website-agtech",
+    "body": "<p>website agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtechwebsite agtech</p>",
+    "created": "2024-09-17T21:52:02.823Z",
+    "update": "2024-09-17T21:52:02.823Z",
+    "statut": "published",
+    "published": "2024-09-17T21:51:21Z",
+    "author": 1
+  }
+},
+{
+  "model": "siteweb.post",
+  "pk": 9,
+  "fields": {
+    "category": 4,
+    "title": "comment colllecter des dnnee",
+    "slug": "comment-colllecter-des-dnnee",
+    "body": "<p>comment colllecter des dnneecomment colllecter des dnneecomment colllecter des dnneecomment colllecter des dnneecomment colllecter des dnneecomment colllecter des dnneecomment colllecter des dnneecomment colllecter des dnneecomment colllecter des dnneecomment colllecter des dnneecomment colllecter des dnneecomment colllecter des dnneecomment colllecter des dnneecomment colllecter des dnneecomment colllecter des dnneecomment colllecter des dnneecomment colllecter des dnneecomment colllecter des dnneecomment colllecter des dnneecomment colllecter des dnneecomment colllecter des dnneecomment colllecter des dnneecomment colllecter des dnneecomment colllecter des dnneecomment colllecter des dnneecomment colllecter des dnneecomment colllecter des dnneecomment colllecter des dnneecomment colllecter des dnneecomment colllecter des dnneecomment colllecter des dnneecomment colllecter des dnneecomment colllecter des dnneecomment colllecter des dnneecomment colllecter des dnneecomment colllecter des dnneecomment colllecter des dnneecomment colllecter des dnneecomment colllecter des dnneecomment colllecter des dnneecomment colllecter des dnneecomment colllecter des dnneecomment colllecter des dnneecomment colllecter des dnnee</p>",
+    "created": "2024-09-17T21:52:37.948Z",
+    "update": "2024-09-17T21:52:37.948Z",
+    "statut": "published",
+    "published": "2024-09-17T21:52:05Z",
+    "author": 1
+  }
+},
+{
+  "model": "siteweb.comment",
+  "pk": 1,
+  "fields": {
+    "post": 8,
+    "author": 1,
+    "body": "ok",
+    "created": "2024-09-17T21:57:47.364Z",
+    "updated": "2024-09-17T21:57:47.364Z"
+  }
+},
+{
+  "model": "siteweb.comment",
+  "pk": 2,
+  "fields": {
+    "post": 1,
+    "author": 1,
+    "body": "cool",
+    "created": "2024-09-17T22:03:48.382Z",
+    "updated": "2024-09-17T22:03:48.382Z"
+  }
+},
+{
+  "model": "siteweb.comment",
+  "pk": 3,
+  "fields": {
+    "post": 1,
+    "author": 1,
+    "body": "ttttt",
+    "created": "2024-09-18T13:29:19.471Z",
+    "updated": "2024-09-18T13:29:19.472Z"
+  }
+},
+{
+  "model": "siteweb.comment",
+  "pk": 4,
+  "fields": {
+    "post": 3,
+    "author": 1,
+    "body": "ok",
+    "created": "2024-09-18T21:32:34.656Z",
+    "updated": "2024-09-18T21:32:34.656Z"
+  }
+},
+{
+  "model": "siteweb.comment",
+  "pk": 5,
+  "fields": {
+    "post": 3,
+    "author": 1,
+    "body": "ok",
+    "created": "2024-09-18T21:33:24.341Z",
+    "updated": "2024-09-18T21:33:24.341Z"
+  }
+},
+{
+  "model": "siteweb.comment",
+  "pk": 6,
+  "fields": {
+    "post": 6,
+    "author": 1,
+    "body": "merci",
+    "created": "2024-09-19T05:48:02.702Z",
+    "updated": "2024-09-19T05:48:02.702Z"
+  }
+}
+]
