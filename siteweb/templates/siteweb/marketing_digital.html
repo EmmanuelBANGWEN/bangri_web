@@ -2,6 +2,18 @@
 {% load static %}
 
 {% block content %}
+ <!-- Page Title -->
+ <div class="page-title dark-background" data-aos="fade" style="background-image: url('{% static "assets/img/page-title-bg.webp" %}');">
+    <div class="container position-relative">
+      <h1>Marketing Digital</h1>
+      <nav class="breadcrumbs">
+        <ol>
+          <li><a href="{% url 'home_view' %}">Home</a></li>
+          <li class="current">Marketing Digital</li>
+        </ol>
+      </nav>
+    </div>
+  </div><!-- End Page Title -->
 <div class="container py-5">
     <h1 class="text-center">Marketing Digital pour les Entreprises</h1>
 
@@ -52,25 +64,7 @@
         </div>
     </section>
 
-    <!-- Section: Testimonials -->
-    <section class="testimonials py-4">
-        <h2>Témoignages</h2>
-        <div class="row">
-            <div class="col-md-6">
-                <blockquote class="p-3 bg-light mb-3">
-                    <p>"Bangri nous a permis de tripler notre visibilité en ligne. Leurs campagnes de publicités ciblées nous ont apporté de nouveaux clients."</p>
-                    <footer>- Jacques Dupont, Exploitation Agricole de Légumes Bio</footer>
-                </blockquote>
-            </div>
-            <div class="col-md-6">
-                <blockquote class="p-3 bg-light mb-3">
-                    <p>"La gestion de nos réseaux sociaux par Bangri a considérablement augmenté notre notoriété. Les résultats sont clairs et positifs."</p>
-                    <footer>- Marie Durand, Producteur de Céréales</footer>
-                </blockquote>
-            </div>
-        </div>
-    </section>
-
+    
     <!-- Section: Call to Action for Free Marketing Audits
     <div class="col-md-4">
 
@@ -97,12 +91,13 @@
 </div> -->
 
     <!-- Section: Visual Campaign Success Infographics -->
-    <section class="campaign-success py-4">
+    <section class="campaign-success py-2">
         <h2>Infographies de Campagnes Réussies</h2>
         <p>Voici des exemples visuels de campagnes marketing fructueuses réalisées pour nos clients :</p>
-        <div class="text-center">
-            <img src="{% static 'assets/img/campaign-success-infographics.png' %}" alt="Infographies de Campagnes Réussies" class="img-fluid">
-        </div>
+        <img src="{% static 'assets/img/agrii.png' %}" alt="Infographies de Campagnes Réussies" class="img-fluid">
+        <img src="{% static 'assets/img/green agri.png' %}" alt="Infographies de Campagnes Réussies" class="img-fluid">
+
+        
     </section>
 </div>
 {% endblock %}

@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'taggit',
     'siteweb.apps.SitewebConfig',
     'accounts.apps.AccountsConfig',
+    'dashboard.apps.DashboardConfig',
 ]
 
 MIDDLEWARE = [
@@ -64,6 +65,15 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'monsite.wsgi.application'
+# ASGI_APPLICATION = 'monsite.asgi.application'
+# CHANNEL_LAYERS = {
+#     'default': {
+#         'BACKEND': 'channels_redis.core.RedisChannelLayer',
+#         'CONFIG': {
+#             "hosts": [('127.0.0.1', 6379)],  # adresse du serveur Redis
+#         },
+#     },
+# }
 
 
 # Database
@@ -127,8 +137,11 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
-# MEDIA_URL = 'media/'
-# MEDIA_ROOT = BASE_DIR / 'media'
+
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
@@ -161,4 +174,9 @@ CELERY_BEAT_SCHEDULE = {
     },
 }
 
+# settings.py
+ORANGE_MONEY_API_KEY = 'votre_clé_API'
+ORANGE_MONEY_SECRET_KEY = 'votre_clé_secrète'
+ORANGE_MONEY_CALLBACK_URL = 'https://votre-domaine.com/callback/'
+ORANGE_MONEY_MERCHANT_ACCOUNT = 'votre_compte_merchant'
 

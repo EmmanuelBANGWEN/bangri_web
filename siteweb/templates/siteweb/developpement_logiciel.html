@@ -2,6 +2,18 @@
 {% load static %}
 
 {% block content %}
+ <!-- Page Title -->
+ <div class="page-title dark-background" data-aos="fade" style="background-image: url('{% static "assets/img/page-title-bg.webp" %}');">
+    <div class="container position-relative">
+      <h1>Développement Logiciel</h1>
+      <nav class="breadcrumbs">
+        <ol>
+          <li><a href="{% url 'home_view' %}">Home</a></li>
+          <li class="current">Développement Logiciel</li>
+        </ol>
+      </nav>
+    </div>
+  </div><!-- End Page Title -->
 <section id="software-development" class="software-development-section py-5">
     <div class="container">
         <h2 class="text-center mb-4">Solutions Logicielles pour votre Entreprise</h2>
@@ -12,7 +24,7 @@
                 <p>Chez Bangri, nous développons des solutions logicielles innovantes pour répondre aux besoins spécifiques des agriculteurs. Nous utilisons des technologies avancées pour faciliter la gestion des fermes, le suivi des récoltes, et l'analyse des données agricoles.</p>
             </div>
             <div class="col-md-4">
-                <img src="{% static 'assets/img/software-development-team.jpg' %}" alt="Équipe de développement logiciel" class="img-fluid">
+                <img src="{% static 'assets/img/tt.jpg' %}" alt="Équipe de développement logiciel" class="img-fluid">
             </div>
         </div>
 
@@ -29,7 +41,7 @@
                 </ul>
             </div>
             <div class="col-md-6 text-center">
-                <img src="{% static 'assets/img/tools-technologies.png' %}" alt="Outils et Technologies" class="img-fluid">
+                <img src="{% static 'assets/img/hrrr.png' %}" alt="Outils et Technologies" class="img-fluid">
             </div>
         </div>
 
@@ -39,13 +51,13 @@
                 <h3>Applications Spécifiques pour l'Agriculture</h3>
                 <p>Nos solutions répondent à divers besoins, notamment :</p>
                 <ul class="list-unstyled">
-                    <li><i class="bi bi-check-circle-fill text-success"></i> Gestion des fermes et des cultures</li>
+                    <li><i class="bi bi-check-circle-fill text-success"></i> Applications de gestion des fermes</li>
                     <li><i class="bi bi-check-circle-fill text-success"></i> Suivi des récoltes et de l'irrigation</li>
                     <li><i class="bi bi-check-circle-fill text-success"></i> Dashboards interactifs pour la gestion des données</li>
                 </ul>
             </div>
             <div class="col-md-6 text-center">
-                <img src="{% static 'assets/img/farm-management.png' %}" alt="Applications agricoles" class="img-fluid">
+                <img src="{% static 'assets/img/pexels-jatuphon-buraphon-110709-348689.jpg' %}" alt="Applications agricoles" class="img-fluid">
             </div>
         </div>
 

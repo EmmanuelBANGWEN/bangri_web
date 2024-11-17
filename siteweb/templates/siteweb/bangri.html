@@ -1,0 +1,159 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+  <style>
+    .hero-gradient {
+      background: linear-gradient(135deg, #1a5f7a 0%, #2E8B57 100%);
+    }
+    .nav-item:hover .submenu {
+      display: block;
+    }
+    .floating-animation {
+      animation: float 6s ease-in-out infinite;
+    }
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0px); }
+    }
+  </style>
+</head>
+<body class="bg-gray-50">
+  <!-- Navigation -->
+  <nav class="bg-white shadow-lg w-full z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex items-center">
+          <img src="{% static 'assets/img/monlogo.png' %}" alt="Bangri Logo" class="h-10 w-auto"/>
+          <span class="ml-2 text-2xl font-bold text-teal-600"></span>
+        </div>
+        
+        <div class="flex items-center space-x-8">
+          <a href="{% url 'home_view' %}" class="text-gray-700 hover:text-teal-600 transition-colors">Accueil</a>
+          <a href="{% url 'blog_view' %}" class="text-gray-700 hover:text-teal-600 transition-colors">Blog</a>
+          <li class="dropdown">
+            <a >
+              <span>Our Services</span>
+              <i class="bi bi-chevron-down"></i>
+            </a>
+            <ul>
+              <li><a href="{% url 'developpement_logiciel' %}">Développement logiciel</a></li>
+              <li><a href="{% url 'analyse_de_données' %}">Analyse de données</a></li>
+              <li><a href="{% url 'consultation' %}">Consultation</a></li>
+              <li><a href="{% url 'marketing_digital' %}">Marketing digital</a></li>
+            </ul>
+          </li>
+          <!-- <a href="#" class="text-gray-700 hover:text-teal-600 transition-colors">FAQ</a> -->
+          <a href="{% url 'contact_view' %}" class="text-gray-700 hover:text-teal-600 transition-colors">Contact</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="hero-gradient min-h-screen pt-16 flex items-center">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div class="text-white space-y-8">
+          <h1 class="text-4xl md:text-6xl font-bold leading-tight">
+            Your Trusted<br>
+            AgTech Partner With<br>
+            <span class="text-teal-300">Bangri</span>
+          </h1>
+          <p class="text-xl text-gray-200">
+            Empowering modern agriculture with data-driven insights and innovative technology solutions.
+          </p>
+          <div class="space-x-4 pt-6">
+            <a href="{% url 'contact_view' %}" class="bg-teal-500 text-white rounded-lg hover:bg-teal-600 transition-colors inline-flex items-center">
+              Contactez-nous
+              <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round"  stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+
+            </a>
+          </div>
+        </div>
+        <div class="hidden md:block">
+          <img src="{% static 'assets/img/hr.png' %}" alt="AgTech Illustration" class="floating-animation rounded-lg shadow-2xl"/>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
+
+<style>
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown > a {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #374151;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .dropdown > a:hover {
+      color: #0D9488;
+    }
+
+    .dropdown > a i {
+      font-size: 0.875rem;
+      transition: transform 0.3s ease;
+    }
+
+    .dropdown:hover > a i {
+      transform: rotate(-180deg);
+    }
+
+    .dropdown ul {
+      position: absolute;
+      left: 0;
+      top: 100%;
+      width: 15rem;
+      margin-top: 0.5rem;
+      padding: 0.5rem 0;
+      background: white;
+      border-radius: 0.375rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px);
+      transition: all 0.3s ease;
+    }
+
+    .dropdown:hover ul {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .dropdown ul li {
+      list-style: none;
+    }
+
+    .dropdown ul li a {
+      display: block;
+      padding: 0.5rem 1rem;
+      color: #374151;
+      font-size: 0.875rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .dropdown ul li a:hover {
+      background-color: #F0FDFA;
+      color: #0D9488;
+      padding-left: 1.5rem;
+    }
+  </style>
