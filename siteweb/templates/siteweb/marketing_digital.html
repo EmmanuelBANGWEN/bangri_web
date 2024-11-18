@@ -24,7 +24,7 @@
                 <p>Nous aidons les entreprises à se développer en ligne avec des stratégies de marketing digital adaptées à leurs besoins spécifiques. Nos services vous permettront d'atteindre un public plus large, d'augmenter votre visibilité et de maximiser vos ventes.</p>
             </div>
             <div class="col-md-4">
-                <img src="{% static 'assets/img/digital-marketing-overview.jpg' %}" alt="Marketing Digital" class="img-fluid">
+                <img src="{% static 'assets/img/green agri.png' %}" alt="Infographies de Campagnes Réussies" class="img-fluid">
             </div>
         </div>
     </section>
@@ -37,9 +37,7 @@
             <li><i class="bi bi-check-circle-fill text-success"></i> Publicités Ciblées : Touchez votre audience idéale via Google et les réseaux sociaux.</li>
             <li><i class="bi bi-check-circle-fill text-success"></i> Gestion des Réseaux Sociaux : Engagez vos clients sur les plateformes sociales.</li>
         </ul>
-        <div class="text-center">
-            <img src="{% static 'assets/img/digital-marketing-services.png' %}" alt="Services de Marketing Digital" class="img-fluid">
-        </div>
+       
     </section>
 
     <!-- Section: Client Results -->
@@ -55,24 +53,29 @@
             <div class="col-md-6">
                 <div class="stat-card p-3 mb-3 bg-light">
                     <h4>+30% d'Augmentation des Ventes</h4>
-                    <p>Les campagnes publicitaires ciblées ont boosté les ventes de nos clients, leur permettant d'atteindre une audience pertinente.</p>
+                    <p>Les campagnes publicitaires ciblées peuvent booster vos ventes, vous permettant d'atteindre une audience pertinente.</p>
                 </div>
             </div>
         </div>
-        <div class="text-center">
-            <img src="{% static 'assets/img/marketing-results-graph.png' %}" alt="Statistiques de Croissance" class="img-fluid">
-        </div>
+        
     </section>
 
     
-    <!-- Section: Call to Action for Free Marketing Audits
+    Section: Call to Action for Free Marketing Audits
     <div class="col-md-4">
 
     <section class="call-to-action py-4">
         <h2>Demandez un Audit Marketing Gratuit</h2>
         <p>Vous souhaitez améliorer votre stratégie digitale ? Remplissez le formulaire ci-dessous pour obtenir un audit gratuit.</p>
-        <form action="#" method="post">
+        <form action="{% url 'contact_view' %}" method="post">
             {% csrf_token %}
+            {% if messages %}
+                <div class="alert alert-success">
+                    {% for message in messages %}
+                        {{ message }}
+                    {% endfor %}
+                </div>
+              {% endif %}
             <div class="mb-3">
                 <label for="name" class="form-label">Nom</label>
                 <input type="text" class="form-control" id="name" name="name" required>
@@ -88,16 +91,15 @@
             <button type="submit" class="btn btn-success">Demander l'Audit Gratuit</button>
         </form>
     </section>
-</div> -->
+</div>
 
     <!-- Section: Visual Campaign Success Infographics -->
-    <section class="campaign-success py-2">
-        <h2>Infographies de Campagnes Réussies</h2>
+    <!-- <section class="campaign-success py-2"> -->
+        <!-- <h2>Infographies de Campagnes Réussies</h2>
         <p>Voici des exemples visuels de campagnes marketing fructueuses réalisées pour nos clients :</p>
         <img src="{% static 'assets/img/agrii.png' %}" alt="Infographies de Campagnes Réussies" class="img-fluid">
-        <img src="{% static 'assets/img/green agri.png' %}" alt="Infographies de Campagnes Réussies" class="img-fluid">
 
         
-    </section>
+    </section> -->
 </div>
 {% endblock %}

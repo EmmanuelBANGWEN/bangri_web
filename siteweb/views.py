@@ -27,8 +27,6 @@ def home_view(request):
                                                   'is_administrateur': is_administrateur,
                                                   })
 
-def about_view(request):
-    return render(request, 'siteweb/about.html')
 
 def category_view(request, category):
     categories = Category.objects.all()
@@ -62,9 +60,6 @@ def blog_details_view(request, year: int, month: int, day: int, slug: str, categ
     tags = Tag.objects.all()
 
     posts = Post.objects.all()
-
-    # Retirer ceci car tu n'as pas besoin d'un seul profil générique
-    # profile = Profile.objects.all()
 
     if category:
         category = get_object_or_404(Category, slug=category)

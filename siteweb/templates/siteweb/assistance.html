@@ -23,9 +23,7 @@
             <div class="col-md-8">
                 <p>Nous offrons un accompagnement complet après-vente à nos clients, incluant formation, support technique et mises à jour logicielles. Notre équipe est dédiée à vous offrir une assistance personnalisée pour garantir le succès de votre projet.</p>
             </div>
-            <div class="col-md-4">
-                <img src="{% static 'assets/img/support-team.jpg' %}" alt="Support Team" class="img-fluid">
-            </div>
+            
         </div>
         
         <!-- Services Section -->
@@ -65,16 +63,7 @@
             </div>
         </div>
         
-        <!-- Video Tutorials -->
-        <div class="row mt-5">
-            <div class="col-md-6">
-                <h3>Vidéos Explicatives</h3>
-                <video controls width="100%">
-                    <source src="{% static 'assets/videos/tutorial.mp4' %}" type="video/mp4">
-                    Votre navigateur ne supporte pas la vidéo.
-                </video>
-            </div>
-        </div>
+        
     </div>
 </section>
 {% if user.is_authenticated %}
