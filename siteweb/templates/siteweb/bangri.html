@@ -62,7 +62,7 @@
     }
     .logo img {
       width: 25%;
-      height: 20%;
+      height: 15%;
     }
 
 
@@ -362,8 +362,7 @@
   <nav id="navmenu" class="navmenu">
     <ul>
       <li><a href="{% url 'home_view' %}">Home</a></li>
-      <!-- <li><a href="{% url 'about_view' %}">About Us</a></li>
-      <li><a href="{% url 'services_view' %}">Our Services</a></li>-->
+      <li><a href="{% url 'services_view' %}">Our Services</a></li>
       <li><a href="{% url 'blog_view' %}" >Blog</a></li>
       <li class="dropdown"><a><span>About Us</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
         <ul>
@@ -442,7 +441,7 @@
       </div>
       <!-- Call to Action -->
       <div class="mt-4">
-        <h1 class="fw-bold">Your Trusted AgTech Partner With <span class="text-primary"> Bangri</span></h1>
+        <h1 class="fw-bold">Your Trusted AgTech Partner With <span class="text-danger"> Bangri</span></h1>
         <p class="lead">Empowering modern agriculture with data-driven insights and innovative technology solutions.</p>
         <div class="mt-4">
           <a href="{% url 'contact_view' %}" class="btn btn-success btn-custom">Contact</a>
@@ -455,18 +454,12 @@
 
 
 
-
-
-
-
-
-
   <script>
 
 /**
-   * Mobile nav toggle
-   */
-   const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
+ * Mobile nav toggle
+ */
+const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
 
 function mobileNavToogle() {
   document.querySelector('body').classList.toggle('mobile-nav-active');
