@@ -48,7 +48,6 @@ def tag_view(request, tag_slug):
         'tag_slug': tag_slug,
         'posts': posts,
         'tag' : tag,
-
     })
 def blog_details_view(request, year: int, month: int, day: int, slug: str, category=None, tag_slug=None):
     post = get_object_or_404(Post, slug=slug, statut='published', published__year=year, 
@@ -501,5 +500,5 @@ def detail_ebook(request, ebook_id):
 
 def redirection_whatsapp(request, ebook_id):
     # Optionnel : récupérer les informations de l'ebook si besoin
-    # ebook = get_object_or_404(Ebook, id=ebook_id)
-    return render(request, 'ebooks/redirect_whatsapp.html')
+    ebook = get_object_or_404(Ebook, id=ebook_id)
+    return render(request, 'ebooks/redirect_whatsapp.html', {'ebook': ebook})
